@@ -13,9 +13,9 @@ public class CleannerApplication {
 
 		if(args.length<3) {
 			// - - Usage - -
-			System.out.println("  -  - Usage -  - ");
-			System.out.println("");
+			System.out.println("  -  - Usage -  - " + "\n");
 			System.out.println("java -jar cleanner <file name> <initial position to cut> <line length> ");
+			System.out.println("\n" +"  -  - - - - -  - ");
 		}
 
 		String inputFile = args[0];
@@ -35,6 +35,7 @@ public class CleannerApplication {
 				BufferedReader br = new BufferedReader(fr);
 
 				while ((s = br.readLine()) != null) {
+					System.out.println(s.length());
 					if (s.length() > length) {
 						initialString = s.substring(0, initialPos);
 						finalString = s.substring(initialPos + (s.length() - length));
